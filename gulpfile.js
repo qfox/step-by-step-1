@@ -4,9 +4,10 @@ const concat = require('gulp-concat');
 
 const decl = [
     'reset',
-    'page*',
-    'link*',
-    'button*'
+    'page',
+    'link',
+    'button',
+    'button--danger'
 ];
 
 gulp.task('build', function() {
