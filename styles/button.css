@@ -1,0 +1,8 @@
+.button {
+    font: lighter 20px/20px Helvetica;
+    padding: 10px 30px;
+    text-shadow: 1px 1px 0 #05a;
+    background: #39f;
+    color: white;
+    border: 0;
+}
