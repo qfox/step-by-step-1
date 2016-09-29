@@ -18,6 +18,8 @@
   "homepage": "https://github.com/zxqfox/step-by-step-1#readme",
   "dependencies": {
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-bem-bundle-builder": "^0.1.0",
+    "gulp-bem-bundler-fs": "0.0.4",
     "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.2"
   }
