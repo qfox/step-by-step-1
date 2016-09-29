@@ -7,15 +7,25 @@ const concat = require('gulp-concat');
 const decl = [
     'reset',
     'page',
-    'page__footer',
     'link',
     'button',
     'button--danger'
 ];
 
 gulp.task('build', function() {
-    const files = decl.map(s => `styles/${s}.css`)
-        .concat(decl.map(s => `styles.desktop/${s}.css`))
+    const fulldecl = decl.reduce((res, s) => {
+        res.push(s);
+        try {
+            require(`./styles/${s}.deps.js`).forEach(s => res.push(s));
+        } catch(e) {}
+        try {
+            require(`./styles.desktop/${s}.deps.js`).forEach(s => res.push(s));
+        } catch(e) {}
+        return res;
+    }, []);
+
+    const files = fulldecl.map(s => `styles/${s}.css`)
+        .concat(fulldecl.map(s => `styles.desktop/${s}.css`))
         .filter(f => fs.existsSync(f));
     return gulp.src(files)
         .pipe(concat('main.css'))
