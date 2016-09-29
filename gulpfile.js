@@ -7,6 +7,7 @@ const concat = require('gulp-concat');
 const decl = [
     'reset',
     'page',
+    'header',
     'link',
     'button',
     'button--danger'
